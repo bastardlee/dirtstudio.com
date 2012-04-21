@@ -18,39 +18,33 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/layout.css">
-<!-- 
+<!--  
  	<script type="text/javascript" src="http://use.typekit.com/yfu2ywr.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  -->
+ -->
 	<script src="js/jquery-1.7.1.js"></script>
 	<script src="js/tabs.js"></script>
 	<script src="js/script.js"></script>
 
 </head>
+
 <body>
 	<div class="container">
 		<header class="sixteen columns">
-			<img id="dirtIsolated" src="img/logo_dirt_isolated.png">
 			<img id="rotate" src="img/header_ford.jpg" alt="header" width="940" height="416" />
 		</header>
-		<ul id="nav" class="tabs fourteen columns offset-by-two">
-			<li class="two columns alpha"><img id="hand" src="img/hand.png"><a href="#studio">STUDIO</a></li>
-			<li class="two columns"><a href="#work">WORK</a></li>
+		
+		<ul id="nav" class="tabs fifteen columns omega offset-by-one">
+			<li class="two columns alpha"><a href="#work">WORK</a></li>
+			<li class="two columns"><a href="#studio">STUDIO</a></li>
 			<li class="two columns"><a href="#press">PRESS</a></li>
 			<li class="two columns"><a href="#news">NEWS</a></li>
-			<li id="logoSmaller" class="six columns omega"><img src="img/logo_smaller.png"></li>
+<!-- 			<li id="logoSmaller" class="six columns omega"><img src="img/logo_smaller.png"></li>
+-->			<img id="dirt-tag" src="img/dirt_tag.png" alt="DIRT" />
 		</ul> <!-- #nav -->
 
-		<ul id="navContent" class="tabs-content eight columns alpha offset-by-two">
-			<li id="studio" class="eight columns alpha omega">
-				<ul id="schitck" class="four columns alpha">
-					<li><a href="#shitck">schtick</a></li>
-					<li><a href="#peeps">peeps</a></li>
-					<li><a href="#collaborators">collaborators</a></li>
-				</ul>
-			</li> <!-- #studio -->
-		
-		
+		<ul id="navContent" class="tabs-content eight columns alpha offset-by-one">
+
 			<li id="work" class="eight columns alpha">
 				<ul id="categories" class="tabsTwo four columns alpha">
 					<li><a href="#mines">mines/landfill</a></li>
@@ -130,8 +124,15 @@
 
 			</li> <!-- #work -->
 
+			<li id="studio" class="offset-by-two six columns alpha omega">
+				<ul id="schitck" class="four columns alpha">
+					<li><a href="#shitck">schtick</a></li>
+					<li><a href="#peeps">peeps</a></li>
+					<li><a href="#collaborators">collaborators</a></li>
+				</ul>
+			</li> <!-- #studio -->
 
-			<li id="press" class="eight columns alpha omega">
+			<li id="press" class="offset-by-four four columns alpha omega">
 				<ul id="categories" class="tabsTwo four columns alpha">
 					<li><a href="#publications" class="pressLink">publications</a></li>
 					<li><a href="#kudos" class="pressLink">kudos</a></li>
@@ -139,15 +140,14 @@
 				</ul>
 			</li> <!-- #press -->
 
-
-			<li id="news" class="eight columns alpha omega">
+			<li id="news" class="fifteen columns alpha omega">
 				<h1>8 Feb, 2012</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit magna, rutrum a fringilla eu, convallis vitae augue. Proin consectetur feugiat euismod. Maecenas dictum arcu sed libero ultrices eget porta tortor viverra. Praesent eget massa vel ligula semper tempus. Quisque vel nisi est.!</p>
 			</li> <!-- #news -->
 					
 		</ul> <!-- #navContent .tabs-content-->
 
-		<ul id="projectHoverArea" class="five columns offset-by-one">
+		<div id="projectHoverArea" class="five columns offset-by-one">
 			<li id="ford" class="projectHover">
 				<img src="img/thumb_ford.jpg"><br />
 				<h3>FORD RIVER ROUGE</h3>
@@ -155,15 +155,37 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur velit magna, rutrum a fringilla eu, convallis vitae augue. Proin consectetur feugiat euismod.</p>
 			</li>
 			<li id="amd" class="projectHover">TOOOOOOOOOOOOO</li>
-		</ul>
+		</div>
+
 		<div id="content" class="sixteen columns alpha omega">
 			<a id="backToWork" href="#"><img src="img/backToWork.png"></a>
 			<div id="contentLoadArea"></div>
 		</div><!-- #content -->
+
+		<!-- <div> -->
+			
+			Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+		<!-- </div> -->
 <!-- 		<footer class="sixteen columns">&copy;2012 Dirt Studio</footer>
  -->
 	</div> <!-- container -->
 
-
+<footer></footer>
 </body>
 </html>

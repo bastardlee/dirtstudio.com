@@ -14,7 +14,7 @@ body { overflow: auto; height: 100%; }
 
 body {
 	background: #fff;
-	font: 10pt "Courier", serif;
+	font: 100% "Courier", serif;
 	color: #959595;
 	font-weight: normal;
 	overflow: scroll;
@@ -36,18 +36,11 @@ h2, h4 {
 	color: #000;
 }
 
-div#contentLoadArea {
+#contentLoadArea {
 	margin-top: 40px;
 }
 
-img#dirtIsolated {
-	position: absolute;
-	top: 310px;
-	left: 182px;
-	z-index: 99;
-}
-
-img#rotate {
+#rotate {
 	z-index: 0;
 }
 
@@ -74,20 +67,21 @@ footer {
 	display: none;
 }
 
-ul#nav {
+#nav {
 	font-family: "letter-gothic-std";
 	font-size: 120%;
-	padding-top: 0px;
+	padding-top: 0;
 	background-color: #fff;
 	margin-bottom: 20px;
+	height: 50px;
 }
 
-ul#nav li {
+#nav li {
 	position: relative;
 	top: 16px;
 }
 
-ul#nav li a.active {
+#nav li a.active {
 	color:#fff;
 	background-color: #f26522;
 	padding: 5px;
@@ -100,16 +94,16 @@ ul#nav li a.active {
 	/*display: none;*/
 }
 
-div#content {
+#content {
 	display:none;
-	min-height: 400px;
+	min-height: 450px;
 }
 
-a#backToWork {
+#backToWork {
 	display: none;
 }
 
-ul#projectHoverArea {
+#projectHoverArea {
 	/*position:relative;*/
 }
 
@@ -130,19 +124,26 @@ ul#projectHoverArea {
 .tabsTwo {
 	/*background-color: #eaeaea;*/
 	padding: 10px;
-	margin-left:-10px !important;
+	margin-left: -10px !important;
 }
 
 .tabsThree {
 	/*background-color: #eaeaea;*/
 	padding: 10px;
-	margin-left:0px;
+	margin-left: 0;
 }
 
-ul#navContent li {
+#navContent li {
 /*	background-color: #f00;
 */}
 
+#dirt-tag {
+	position: absolute;
+	top: 300px;
+	right: -80px;
+	/*left: 500px;*/
+	/*top: 325px;*/
+}
 
 /*#content {
  background-color :#f00;
@@ -185,7 +186,7 @@ ul li a {
 	font-weight: normal;
 }
 
-ul li a:hover, ul .active {
+ul li a:hover, ul a.active {
 	color: #000;
 	text-decoration: none;
 	font-weight: bold;

@@ -11,7 +11,7 @@ $(document).ready(function () {
 	var $Nav = $("ul#nav");
 	var $NavContent = $("ul#navContent");
 	var $NavLinks = $Nav.find('li a');
-	var $HoverArea = $("ul#projectHoverArea");
+	var $HoverArea = $("#projectHoverArea");
 
 	function hideNavContent() {
 		$NavContent.slideUp();
@@ -164,19 +164,28 @@ $(document).ready(function () {
 */
 
 	var aboveHeight = $('header').outerHeight();
+	var dirtTagHeight = aboveHeight - 138;
 
 	$(window).scroll(function(){
  
+
 		if ($(window).scrollTop() >= aboveHeight){
 			//$('#nav').addClass('fixed').css('top','0').next().css('padding-top','60px');
-			$('#nav').css('position', 'fixed');
 			$('#nav').css({
+				'position' : 'fixed',
+				'top' : '0'
+			});
+
+
+			$('#dirt-tag').css({
 				'top' : '0'
 			});
 
 			$Content.css('padding-top','50px');
 
-			$('#logoSmaller').css('display', 'block');
+
+			// $('#logoSmaller').css('display', 'block');
+
 			// $('#logoSmaller').animate({
 			//	top: '+=50'
 			//	}, 500, function(){
@@ -184,8 +193,13 @@ $(document).ready(function () {
 
 		} else {
 			$('#nav').css('position', 'static');
+
+			$('#dirt-tag').css({
+				'top' : '300px'
+			});
+
 			$Content.css('padding-top','0');
-			$('#logoSmaller').css('display', 'none');
+			// $('#dirt-tag').css('display', 'none');
 			// $('#logoSmaller').animate({
 			//	top: -50
 			//	}, 500, function(){
