@@ -14,10 +14,11 @@ body { overflow: auto; height: 100%; }
 
 body {
 	background: #fff;
-	font: 100% "Courier", serif;
+	font: 85% "Courier", serif;
 	color: #959595;
 	font-weight: normal;
 	overflow: scroll;
+	min-height: 1000px;
 }
 
 h1 {
@@ -111,8 +112,13 @@ footer {
 	background-color: #f00;
 }
 
-.projectHover {
+.project-hover {
 	display: none;
+	z-index: 99;
+}
+
+.projectLink {
+	/*height: 200px;*/
 }
 
 #logoSmaller {
@@ -143,6 +149,17 @@ footer {
 	right: -80px;
 	/*left: 500px;*/
 	/*top: 325px;*/
+}
+
+.hover-thing {
+	/*border: 1px solid #f00;*/
+	background: url('../img/orange_line.png') no-repeat;	
+}
+
+.caption {
+	padding: 10px;
+	font-size: .75em;
+	background-color: #ebebeb;
 }
 
 /*#content {
@@ -195,9 +212,15 @@ ul li a:hover, ul a.active {
 
 ul li a.active {
 	text-decoration: bold;
-	border-left: 5px solid #f26522;
+	/*border-left: 5px solid #f26522;
 	padding-left: 5px;
-	margin-left: -10px;
+	margin-left: -10px;*/
+}
+
+ul li ul li a.active:before {
+	position: absolute;
+	content: url(../img/hand.png);
+	left: 5px;
 }
 
 

@@ -139,57 +139,29 @@ $(document).ready(function () {
 			//$Content.fadeIn('slow', hideNavContent());
 		});
 
-
-
-
-		/*$("html, body").animate({ scrollTop: "1000px" });*/
-
-
-		/*$('html, body').animate({
-			scrollTop: $Content.offset().top
-		}, 2000);*/
-
 	});
-	// Sticky sidebar!
-	/*$(window).scroll(function(){
-		if (window.pageYOffset > 420) {
-			$('#nav').css('position', 'fixed');
-			$('#nav').css({
-				'top' : '0'
-			});
-		} else {
-			$('#nav').css('position', 'static');
-		}
-	});
-*/
+
 
 	var aboveHeight = $('header').outerHeight();
 	var dirtTagHeight = aboveHeight - 138;
 
 	$(window).scroll(function(){
  
-
+		// Once the top of the nav gets to the top of the page,
 		if ($(window).scrollTop() >= aboveHeight){
-			//$('#nav').addClass('fixed').css('top','0').next().css('padding-top','60px');
+
+			// fix the nav to top...
 			$('#nav').css({
 				'position' : 'fixed',
 				'top' : '0'
 			});
 
-
+			// ... as well as the DIRT logo.
 			$('#dirt-tag').css({
 				'top' : '0'
 			});
 
 			$Content.css('padding-top','50px');
-
-
-			// $('#logoSmaller').css('display', 'block');
-
-			// $('#logoSmaller').animate({
-			//	top: '+=50'
-			//	}, 500, function(){
-			// });
 
 		} else {
 			$('#nav').css('position', 'static');
@@ -199,20 +171,136 @@ $(document).ready(function () {
 			});
 
 			$Content.css('padding-top','0');
-			// $('#dirt-tag').css('display', 'none');
-			// $('#logoSmaller').animate({
-			//	top: -50
-			//	}, 500, function(){
-			// });
-
-			/*$('#nav').removeClass('fixed').next()
-				.css('padding-top','0');
-			}*/
 		}
-    });
+	});
+
+	/* Tabs Activiation
+	================================================== */
+
+	var tabs = $('ul.tabs');
+
+	tabs.each(function(i) {
+
+		//Get all tabs
+		var tab = $(this).find('> li > a');
+		tab.click(function(e) {
+
+			//Get Location of tab's content
+			var contentLocation = $(this).attr('href');
+
+			//Let go if not a hashed one
+			if(contentLocation.charAt(0)=="#") {
+				e.preventDefault();
+
+				//Make Tab Active
+				tab.removeClass('active');
+				$(this).addClass('active');
+
+				//Show Tab Content & add active class
+				//$(contentLocation).slideDown().addClass('active').siblings().hide().removeClass('active');
+				$(contentLocation).slideDown().addClass('active').siblings().hide().removeClass('active');
+
+			}
+		});
+	});
+
+	var tabsTwo = $('ul.tabsTwo');
+
+	tabsTwo.each(function(i) {
+		
+		//Get all tabsTwo
+		var tabTwo = $(this).find('> li > a');
+		tabTwo.click(function(e) {
+			// Get location of tab's content
+			var contentLocation = $(this).attr('href');
+
+			//Let go if not a hashed one
+			if (contentLocation.charAt(0)=="#") {
+
+				if(contentLocation=="#all"){
+					$("li#allToggle").show();
+				} else {
+					$("li#allToggle").hide();
+				}
+				
+				e.preventDefault();
+
+				//Make tab active
+				tabTwo.removeClass('active');
+				$(this).addClass('active');
+
+				//Show Tab content & add active class
+				//$(contentLocation).slideDown().addClass('active').siblings().slideUp().removeClass('active');
+
+				$(contentLocation).siblings().slideUp('fast', function(){
+					setTimeout(function(){
+						$(contentLocation).fadeIn('slow');
+					}, 200);
+					//removeClass('active');
+				//}).addClass('active');
+				});
+				/*
+				$(contentLocation).slideDown('fast', function(){
+					$(contentLocation).siblings().slideUp();
+					//removeClass('active');
+				//}).addClass('active');
+				});*/
+			}
+		});
+	});
+
+
+	var tabsThree = $('ul.tabsThree');
+
+	tabsThree.each(function(i) {
+		
+		//Get all tabsTwo
+		var tabThree = $(this).find('> li > a');
+
+		tabThree.hover(
+			function(){
+
+				// .position() uses position relative to the offset parent,
+				var pos = $(this).position();
+
+				// .outerWidth() takes into account border and padding.
+				var width = $(this).outerWidth();
+
+				//show the menu directly over the placeholder
+				$("div.project-hover").css({
+					position: "absolute",
+					top: pos.top + 11 + "px",
+					// left: pos.left + "px"
+					left: (pos.left + width) + "px"
+					// left: (pos.left + width) + "px"
+				}).show();
+
+				var contentLocation = $(this).attr('href');
+				var split = contentLocation.split('#');
+				var thumbLocation = "thumb/thumb_"+split[1]+".html";
+
+				if (contentLocation.charAt(0)=="#") {
+					$(this).addClass('active');
+					// $("div.project-hover").css('display', 'block');
+					
+					$("div.project-hover").load(thumbLocation, function(){});
+
+					// $(contentLocation).show().addClass('active').siblings().hide().removeClass('active');
+				}
+			},
+			function(){
+				$(this).removeClass('active');
+				// $("div.project-hover").css('display', 'none');
+				$("div.project-hover").hide();
+				// $(contentLocation).hide().removeClass('active').siblings().hide().removeClass('active');
+			}
+
+		);
+
+	});
+
+
 	
 });
-
-
 
 
