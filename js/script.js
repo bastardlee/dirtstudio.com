@@ -71,6 +71,7 @@ $(document).ready(function () {
 	});
 
 	$('a#backToWork').click(function(c){
+		console.log("hi backtowork has been clikced");
 		c.preventDefault();
 		closeContentShowNav();
 	});
@@ -85,7 +86,7 @@ $(document).ready(function () {
 		console.log("stopping rotate. rotateImageID is now "+rotateImageID);
 
 		var split = $(this).attr('href').split('#');
-		var contentLocation = "content/"+split[1]+".html";
+		var contentLocation = "content/"+split[1]+"/"+split[1]+".html";
 
 		// display the corresponding header image
 		$('#rotate').attr('src', "img/header_"+split[1]+".jpg");
@@ -141,14 +142,14 @@ $(document).ready(function () {
 
 	});
 
-
+	// get the height of the header
 	var aboveHeight = $('header').outerHeight();
-	var dirtTagHeight = aboveHeight - 138;
+	// var dirtTagHeight = aboveHeight - 138;
 
 	$(window).scroll(function(){
  
 		// Once the top of the nav gets to the top of the page,
-		if ($(window).scrollTop() >= aboveHeight){
+		if ($(window).scrollTop() >= aboveHeight+20){
 
 			// fix the nav to top...
 			$('#nav').css({
@@ -161,7 +162,7 @@ $(document).ready(function () {
 				'top' : '0'
 			});
 
-			$Content.css('padding-top','50px');
+			$Content.css('padding-top','75px');
 
 		} else {
 			$('#nav').css('position', 'static');
