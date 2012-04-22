@@ -158,49 +158,30 @@ $(document).ready(function () {
 
 	});
 
-	// get the height of the header
-	var aboveHeight = $('header').outerHeight();
-	// var dirtTagHeight = aboveHeight - 138;
+	// get the top height of the header
+	var aboveHeight = ($('header').outerHeight())+20;
 
 	$(window).scroll(function(){
- 
-		// Once the top of the nav gets to the top of the page,
-		if ($(window).scrollTop() >= aboveHeight+20){
 
+		// Once the top of the nav gets to the top of the page,
+		if ($(window).scrollTop() > aboveHeight){
+			
 			// fix the nav to top...
-			$('.nav').css({
-				'position' : 'fixed',
-				'top' : '0'
-			});
+			$('.nav').addClass('fixed').css('top','0').next().
+				css('margin-top','90px');
 
 			// ... as well as the DIRT logo.
 			$('.dirt-tag').css({
 				'top' : '0'
 			});
 
-			// $('.nav-padding').css('display', 'block');
-			// $('#navContent').css('padding-top','75px');
-
-			// if the menu is visible, then it needs a margin too
-			if($NavContent.is(":visible")) {
-				$NavContent.css('margin-top','75px');
-			} else {
-				$Content.css('margin-top','75px');
-			}
-
 		} else {
-			$('.nav').css('position', 'static');
-
+			$('.nav').removeClass('fixed').next()
+                .css('margin-top','0');
+                
 			$('.dirt-tag').css({
 				'top' : '300px'
 			});
-
-			// $('#navContent').css('padding-top','0');
-			if($NavContent.is(":visible")) {
-				$NavContent.css('margin-top','0');
-			} else {
-				$Content.css('margin-top','0');
-			}
 
 		}
 	});

@@ -56,6 +56,10 @@ footer {
 	margin-bottom: 20px;
 }
 
+.fixed {
+	position: fixed;
+}
+
 .all-toggle {
 	display: none;
 }
@@ -177,9 +181,9 @@ ul li a.active {
 	left: 5px;
 }*/
 
-#categories li a.active {
+/*#categories li a.active {
 	list-style-image: url(../img/hand.png)
-}
+}*/
 
 ul.tabs-content { margin: 0 0 70px 0; display: block; }
 ul.tabs-content > li { display:none; }
