@@ -127,16 +127,16 @@ $(document).ready(function () {
 		$ContentLoadArea.load(pressLocation, function(){
 			
 			//hide nav
-			$HoverArea.fadeOut('slow', function(){});
+			//$HoverArea.fadeOut('slow', function(){});
 
-			$NavContent.fadeOut('slow', function(){
+			//$NavContent.fadeOut('slow', function(){
 				$Content.fadeIn('slow', function(){
 
 					// $('body, html').stop().animate({
 					// scrollTop: $Nav.offset().top
 					// });
 				});
-			});
+			//});
 			//$Content.fadeIn('slow', hideNavContent());
 		});
 
@@ -162,7 +162,15 @@ $(document).ready(function () {
 				'top' : '0'
 			});
 
-			$Content.css('padding-top','75px');
+			// $('.nav-padding').css('display', 'block');
+			// $('#navContent').css('padding-top','75px');
+
+			// if the menu is visible, then it needs a margin too
+			if($NavContent.is(":visible")) {
+				$NavContent.css('margin-top','75px');
+			} else {
+				$Content.css('margin-top','75px');
+			}
 
 		} else {
 			$('#nav').css('position', 'static');
@@ -171,7 +179,13 @@ $(document).ready(function () {
 				'top' : '300px'
 			});
 
-			$Content.css('padding-top','0');
+			// $('#navContent').css('padding-top','0');
+			if($NavContent.is(":visible")) {
+				$NavContent.css('margin-top','0');
+			} else {
+				$Content.css('margin-top','0');
+			}
+
 		}
 	});
 
