@@ -1,18 +1,22 @@
 var pathname = window.location.pathname;
-console.log(pathname);
+// console.log(pathname);
 
 $(document).ready(function () {
 
 	var $Content = $("#content");
 	var $LoadArea = $(".load-area");
-	var $ProjectLinks = $("a.projectLink");
+	var $ProjectLinks = $("a.project-link");
 	var $PressLinks = $("a.pressLink");
+	var $PressLink = $("a.press");
 	var $NewsLink = $("a.news");
+	var $WorkLink = $("a.work");
+	var $StudioLink = $("a.studio");
 	var $Nav = $("ul#nav");
 	var $NavContent = $("ul#navContent");
 	var $NavLinks = $Nav.find('li a');
 	var $HoverArea = $("#projectHoverArea");
 	var rotateImageID = null;
+
 
 	function hideNavContent() {
 		$NavContent.slideUp();
@@ -20,40 +24,46 @@ $(document).ready(function () {
 	}
 
 	function showNavContent() {
-		$NavContent.slideDown();
+		$NavContent.slideDown('slow', function(){});
 		$HoverArea.show();
-		$('a#backToWork').hide();
+		$('a.back-to-work').hide();
 	}
 
 	function closeContentShowNav() {
+		// console.log("closecontentshownav");
 
-		if ($NavContent.is(":hidden")){
-			$('body, html').stop().animate({ scrollTop: 0 }, function(){
-				$Content.fadeOut('slow', function(){
-					showNavContent();
-				});
+		// if ($NavContent.is(":hidden")){
+		// 	$('body, html').stop().animate({ scrollTop: 0 }, function(){
+		// 		$Content.fadeOut('fast', function(){
+		// 			showNavContent();
+		// 		});
+		// 	});
+
+		// 	// if it's stopped, start it again
+		// 	if (!rotateImageID) {
+		// 		rotateImageID = setInterval(rotateImage, 10000);
+		// 	}
+		// }
+
+		// $('body, html').stop().animate({ scrollTop: 0 }, function(){
+			// console.log("hiding content");
+			$Content.fadeOut('fast', function(){
+				// console.log("showing navcontent");
+				showNavContent();
 			});
+		// });
 
-			if (!rotateImageID) {
-				//rotateImageID = setInterval(rotateImage, 5000);
-				rotateImageID = setInterval(rotateImage, 5000);
-				console.log("rotateImageID doesn't exist. restarting, rotateimageid is "+rotateImageID);
-			}
-			// else {
-			// 	rotateImageID = setInterval(rotateImage, 5000);
-			// 	console.log("rotateImage doesn't exist. restarting.");
-			// }
+		// if it's stopped, start it again
+		if (!rotateImageID) {
+			rotateImageID = setInterval(rotateImage, 10000);
 		}
 	}
 
 	var images = new Array ('img/header_ford.jpg', 'img/header_amd.jpg', 'img/header_northshore.jpg');
 	var index = 1;
 
-
 	function rotateImage(){
 
-		console.log('rotateImageID is set to '+rotateImageID);
-		
 		$('.rotate').fadeOut('slow', function(){
 			$(this).attr('src', images[index]);
 				$(this).fadeIn('slow', function(){
@@ -68,13 +78,21 @@ $(document).ready(function () {
 	}
 
 	// start rotating
-	rotateImageID = setInterval(rotateImage, 5000);
+	rotateImageID = setInterval(rotateImage, 10000);
 
-	$NavLinks.click(function(){
+	$WorkLink.click(function(){
 		closeContentShowNav();
 	});
 
-	$('a#backToWork').click(function(c){
+	$StudioLink.click(function(){
+		closeContentShowNav();
+	});
+
+	$PressLink.click(function(){
+		closeContentShowNav();
+	});
+
+	$('a.back-to-work').click(function(c){
 		c.preventDefault();
 		closeContentShowNav();
 	});
@@ -88,8 +106,7 @@ $(document).ready(function () {
 		clearInterval(rotateImageID);
 		rotateImageID = false;
 
-		console.log("stopping rotate. rotateImageID = "+rotateImageID);
-
+		// get path info for project
 		var split = $(this).attr('href').split('#');
 		var contentLocation = "content/"+split[1]+"/"+split[1]+".html";
 
@@ -99,12 +116,11 @@ $(document).ready(function () {
 		// load requested content into #content
 		$LoadArea.load(contentLocation, function(){
 			
-			//hide nav
-			// $HoverArea.fadeOut('slow', function(){});
+			//hide hover
 			$HoverArea.css('display','none');
 			
 			//show back to work link
-			$('a#backToWork').show();
+			$('a.back-to-work').show();
 
 			// $NavContent.fadeOut('slow', function(){
 			//	$Content.fadeIn('slow', function(){
@@ -123,10 +139,10 @@ $(document).ready(function () {
 	});
 
 	$NewsLink.click(function(){
+		// console.log('newslink clicked');
 		hideNavContent();
 		$LoadArea.load("news/news.html", function(){
-			$Content.fadeIn('slow', function(){
-			});
+			$Content.fadeIn('slow', function(){});
 		});
 	});
 
@@ -138,19 +154,7 @@ $(document).ready(function () {
 		
 		// load requested content into #content
 		$LoadArea.load(pressLocation, function(){
-			
-			//hide nav
-			//$HoverArea.fadeOut('slow', function(){});
-
-			//$NavContent.fadeOut('slow', function(){
-				$Content.fadeIn('slow', function(){
-
-					// $('body, html').stop().animate({
-					// scrollTop: $Nav.offset().top
-					// });
-				});
-			//});
-			//$Content.fadeIn('slow', hideNavContent());
+			$Content.fadeIn('slow', function(){});
 		});
 
 	});

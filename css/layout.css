@@ -84,7 +84,7 @@ footer {
 	min-height: 450px;
 }
 
-#backToWork {
+.back-to-work {
 	display: none;
 	position: relative;
 	right: -760px;
@@ -94,49 +94,14 @@ footer {
 	z-index: 0;
 }
 
-#backToWork a:link, #backToWork a:visited {
+.back-to-work a:link, .back-to-work a:visited {
 	color: #959595;
-}
-
-#projectHoverArea {
-	/*position:relative;*/
-}
-
-#navContainer {
-	background-color: #f00;
 }
 
 .project-hover {
 	display: none;
 	z-index: -1;
 }
-
-
-.projectLink {
-	/*height: 200px;*/
-}
-
-#logoSmaller {
-	display: none;
-	/*position: relative;*/
-/*	top: -5px !important;
-*/}
-
-.tabsTwo {
-	/*background-color: #eaeaea;*/
-	/*padding: 10px;*/
-	/*margin-left: -10px !important;*/
-}
-
-.tabsThree {
-	/*background-color: #eaeaea;*/
-	/*padding: 10px;*/
-	/*margin-left: 0;*/
-}
-
-#navContent li {
-/*	background-color: #f00;
-*/}
 
 #dirt-tag {
 	position: absolute;
