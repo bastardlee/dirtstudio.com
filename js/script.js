@@ -4,10 +4,10 @@ console.log(pathname);
 $(document).ready(function () {
 
 	var $Content = $("#content");
-	var $ContentLoadArea = $("#contentLoadArea");
+	var $LoadArea = $(".load-area");
 	var $ProjectLinks = $("a.projectLink");
 	var $PressLinks = $("a.pressLink");
-	var $NewsLinks = $("a.news");
+	var $NewsLink = $("a.news");
 	var $Nav = $("ul#nav");
 	var $NavContent = $("ul#navContent");
 	var $NavLinks = $Nav.find('li a');
@@ -50,7 +50,7 @@ $(document).ready(function () {
 
 		console.log('rotateImageID is set to '+rotateImageID);
 		
-		$('#rotate').fadeOut('slow', function(){
+		$('.rotate').fadeOut('slow', function(){
 			$(this).attr('src', images[index]);
 				$(this).fadeIn('slow', function(){
 					if (index == images.length-1) {
@@ -71,7 +71,6 @@ $(document).ready(function () {
 	});
 
 	$('a#backToWork').click(function(c){
-		console.log("hi backtowork has been clikced");
 		c.preventDefault();
 		closeContentShowNav();
 	});
@@ -89,10 +88,10 @@ $(document).ready(function () {
 		var contentLocation = "content/"+split[1]+"/"+split[1]+".html";
 
 		// display the corresponding header image
-		$('#rotate').attr('src', "img/header_"+split[1]+".jpg");
+		$('.rotate').attr('src', "img/header_"+split[1]+".jpg");
 
 		// load requested content into #content
-		$ContentLoadArea.load(contentLocation, function(){
+		$LoadArea.load(contentLocation, function(){
 			
 			//hide nav
 			// $HoverArea.fadeOut('slow', function(){});
@@ -117,6 +116,14 @@ $(document).ready(function () {
 
 	});
 
+	$NewsLink.click(function(){
+		hideNavContent();
+		$LoadArea.load("news/news.html", function(){
+			$Content.fadeIn('slow', function(){
+			});
+		});
+	});
+
 
 	$PressLinks.click(function(){
 
@@ -124,7 +131,7 @@ $(document).ready(function () {
 		var pressLocation = "press/"+split[1]+".html";
 		
 		// load requested content into #content
-		$ContentLoadArea.load(pressLocation, function(){
+		$LoadArea.load(pressLocation, function(){
 			
 			//hide nav
 			//$HoverArea.fadeOut('slow', function(){});
@@ -233,9 +240,9 @@ $(document).ready(function () {
 			if (contentLocation.charAt(0)=="#") {
 
 				if(contentLocation=="#all"){
-					$("li#allToggle").show();
+					$("li.all-toggle").show();
 				} else {
-					$("li#allToggle").hide();
+					$("li.all-toggle").hide();
 				}
 				
 				e.preventDefault();
@@ -285,8 +292,8 @@ $(document).ready(function () {
 				$("div.project-hover").css({
 					position: "absolute",
 					top: pos.top + 11 + "px",
-					// left: pos.left + "px"
-					left: (pos.left + width) + "px"
+					left: pos.left - 10 + "px"
+					// left: (pos.left + width) + "px"
 					// left: (pos.left + width) + "px"
 				}).show();
 
