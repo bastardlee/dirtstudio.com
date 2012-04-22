@@ -8,9 +8,18 @@ body {
 	min-height: 1000px;
 }
 
+a:link, a:visited {
+	color: #666;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 h1 {
 	font-family: "letter-gothic-std", "Courier", serif;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	color: #f26522;
 }
 
@@ -51,7 +60,7 @@ footer {
 	display: none;
 }
 
-#nav {
+.nav {
 	font-family: "letter-gothic-std";
 	font-size: 1.1em;
 	padding-top: 0;
@@ -61,25 +70,19 @@ footer {
 	z-index: 1;
 }
 
-#nav li {
+.nav li {
 	position: relative;
 	top: 16px;
 }
 
-#nav li a.active {
+.nav li a.active {
 	color:#fff;
 	background-color: #f26522;
 	padding: 5px;
 
 }
 
-#hand {
-	position: absolute;
-	left:-120px;
-	/*display: none;*/
-}
-
-#content {
+.content {
 	display:none;
 	min-height: 450px;
 }
@@ -88,13 +91,13 @@ footer {
 	display: none;
 	position: relative;
 	right: -760px;
-	top: 40px;
+	top: 35px;
 	font-size: .75em;
 	text-decoration: none;
 	z-index: 0;
 }
 
-.back-to-work a:link, .back-to-work a:visited {
+a.back-to-work:link, a.back-to-work:visited {
 	color: #959595;
 }
 
@@ -103,17 +106,14 @@ footer {
 	z-index: -1;
 }
 
-#dirt-tag {
+.dirt-tag {
 	position: absolute;
 	top: 300px;
 	right: -100px;
 	z-index: 99;
-	/*left: 500px;*/
-	/*top: 325px;*/
 }
 
 .hover-thing {
-	/*border: 1px solid #f00;*/
 	background: url('../img/orange_line.png') no-repeat;	
 }
 
@@ -123,14 +123,6 @@ footer {
 	background-color: #ebebeb;
 }
 
-/*#content {
- background-color :#f00;
-
-}
-
-#navContent {
-	background-color: #0f0;
-}*/
 /* #Tabs (activate in tabs.js)
 ================================================== */
 
@@ -186,12 +178,10 @@ ul li a.active {
 }*/
 
 #categories li a.active {
-list-style-image: url(../img/hand.png)
+	list-style-image: url(../img/hand.png)
 }
 
-
-
-ul.tabs-content { margin: 0; display: block; }
+ul.tabs-content { margin: 0 0 70px 0; display: block; }
 ul.tabs-content > li { display:none; }
 ul.tabs-content > li.active { display: block; }
 

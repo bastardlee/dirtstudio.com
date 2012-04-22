@@ -3,16 +3,17 @@ var pathname = window.location.pathname;
 
 $(document).ready(function () {
 
-	var $Content = $("#content");
+	var $Content = $(".content");
 	var $LoadArea = $(".load-area");
 	var $ProjectLinks = $("a.project-link");
-	var $PressLinks = $("a.pressLink");
+	var $PressLinks = $("a.press-link");
 	var $PressLink = $("a.press");
 	var $NewsLink = $("a.news");
 	var $WorkLink = $("a.work");
 	var $StudioLink = $("a.studio");
-	var $Nav = $("ul#nav");
-	var $NavContent = $("ul#navContent");
+	var $StudioLinks = $("a.studio-link");
+	var $Nav = $("ul.nav");
+	var $NavContent = $("ul.tabs-content");
 	var $NavLinks = $Nav.find('li a');
 	var $HoverArea = $("#projectHoverArea");
 	var rotateImageID = null;
@@ -30,20 +31,6 @@ $(document).ready(function () {
 	}
 
 	function closeContentShowNav() {
-		// console.log("closecontentshownav");
-
-		// if ($NavContent.is(":hidden")){
-		// 	$('body, html').stop().animate({ scrollTop: 0 }, function(){
-		// 		$Content.fadeOut('fast', function(){
-		// 			showNavContent();
-		// 		});
-		// 	});
-
-		// 	// if it's stopped, start it again
-		// 	if (!rotateImageID) {
-		// 		rotateImageID = setInterval(rotateImage, 10000);
-		// 	}
-		// }
 
 		// $('body, html').stop().animate({ scrollTop: 0 }, function(){
 			// console.log("hiding content");
@@ -150,10 +137,22 @@ $(document).ready(function () {
 	$PressLinks.click(function(){
 
 		var split = $(this).attr('href').split('#');
-		var pressLocation = "press/"+split[1]+".html";
+		var contentLocation = "press/"+split[1]+".html";
 		
 		// load requested content into #content
-		$LoadArea.load(pressLocation, function(){
+		$LoadArea.load(contentLocation, function(){
+			$Content.fadeIn('slow', function(){});
+		});
+
+	});
+
+	$StudioLinks.click(function(){
+
+		var split = $(this).attr('href').split('#');
+		var contentLocation = "studio/"+split[1]+".html";
+		
+		// load requested content into #content
+		$LoadArea.load(contentLocation, function(){
 			$Content.fadeIn('slow', function(){});
 		});
 
@@ -169,13 +168,13 @@ $(document).ready(function () {
 		if ($(window).scrollTop() >= aboveHeight+20){
 
 			// fix the nav to top...
-			$('#nav').css({
+			$('.nav').css({
 				'position' : 'fixed',
 				'top' : '0'
 			});
 
 			// ... as well as the DIRT logo.
-			$('#dirt-tag').css({
+			$('.dirt-tag').css({
 				'top' : '0'
 			});
 
@@ -190,9 +189,9 @@ $(document).ready(function () {
 			}
 
 		} else {
-			$('#nav').css('position', 'static');
+			$('.nav').css('position', 'static');
 
-			$('#dirt-tag').css({
+			$('.dirt-tag').css({
 				'top' : '300px'
 			});
 
