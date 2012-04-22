@@ -12,6 +12,7 @@ $(document).ready(function () {
 	var $NavContent = $("ul#navContent");
 	var $NavLinks = $Nav.find('li a');
 	var $HoverArea = $("#projectHoverArea");
+	var rotateImageID = null;
 
 	function hideNavContent() {
 		$NavContent.slideUp();
@@ -35,16 +36,19 @@ $(document).ready(function () {
 
 			if (!rotateImageID) {
 				//rotateImageID = setInterval(rotateImage, 5000);
-				console.log("rotateImageID doesn't exist. restarting, rotateimageid is "+rotateImageID);
-			} else {
 				rotateImageID = setInterval(rotateImage, 5000);
-				console.log("rotateImage doesn't exist. restarting.");
+				console.log("rotateImageID doesn't exist. restarting, rotateimageid is "+rotateImageID);
 			}
+			// else {
+			// 	rotateImageID = setInterval(rotateImage, 5000);
+			// 	console.log("rotateImage doesn't exist. restarting.");
+			// }
 		}
 	}
 
-	var images = new Array ('img/header_ford.jpg', 'img/header_brewery.jpg', 'img/header_northshore.jpg');
+	var images = new Array ('img/header_ford.jpg', 'img/header_amd.jpg', 'img/header_northshore.jpg');
 	var index = 1;
+
 
 	function rotateImage(){
 
@@ -82,7 +86,9 @@ $(document).ready(function () {
 
 		// stop the rotate
 		clearInterval(rotateImageID);
-		console.log("stopping rotate. rotateImageID is now "+rotateImageID);
+		rotateImageID = false;
+
+		console.log("stopping rotate. rotateImageID = "+rotateImageID);
 
 		var split = $(this).attr('href').split('#');
 		var contentLocation = "content/"+split[1]+"/"+split[1]+".html";
