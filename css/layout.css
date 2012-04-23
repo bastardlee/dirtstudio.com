@@ -4,7 +4,7 @@ body {
 	font: 85% "Courier", serif;
 	color: #959595;
 	font-weight: normal;
-	overflow: scroll;
+	/*overflow: scroll;*/
 	min-height: 1000px;
 }
 
@@ -113,8 +113,15 @@ a.back-to-work:link, a.back-to-work:visited {
 .dirt-tag {
 	position: absolute;
 	top: 300px;
-	right: -100px;
+	/*right: -100px;*/
+	left: 650px;
 	z-index: 99;
+}
+
+.black-line {
+	position: relative;
+	left: -250px;
+	top: -7px;
 }
 
 .hover-thing {
@@ -136,8 +143,8 @@ ul.tabs {
 	display: block;
 	margin: 0 0 20px 0;
 	padding: 0;
-	border-bottom: solid 1px #eaeaea;
-}
+/*	border-bottom: solid 1px #eaeaea;
+*/}
 
 ul.tabs li {
 	list-style: none;
