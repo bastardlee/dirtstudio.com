@@ -106,10 +106,11 @@ $(document).ready(function () {
 				break;
 			default:
 				contentLocation = "content/"+split[1]+"/"+split[1]+".html";
+				clearInterval(rotateImageID);
+				rotateImageID = false;
+				$('.rotate').attr('src', "img/header_"+split[1]+".jpg");
 		}
 
-		// var contentLocation = "content/"+split[1]+"/"+split[1]+".html";
-		// console.log('consolelocation'+contentLocation);
 		$LoadArea.load(contentLocation, function(){
 			
 			//hide hover
@@ -154,7 +155,7 @@ $(document).ready(function () {
 	// when a project link is clicked
 	$ProjectLinks.click(function(c){
 		
-		c.preventDefault();
+		// c.preventDefault();
 
 		// stop the rotate
 		clearInterval(rotateImageID);
@@ -222,14 +223,22 @@ $(document).ready(function () {
 
 	});
 
+
+	var firefoxPadding = 0;
+
+	// weird box model fix for firefox
+	if ($.browser.mozilla === true) {
+		firefoxPadding = 20;
+	}
+
 	// get the top height of the header
-	var aboveHeight = ($('header').outerHeight())+20;
+	var aboveHeight = ($('header').outerHeight())+firefoxPadding;
 
 	$(window).scroll(function(){
 
 		// Once the top of the nav gets to the top of the page,
 		if ($(window).scrollTop() > aboveHeight){
-			
+
 			// fix the nav to top...
 			$('.nav').addClass('fixed').css('top','0').next().
 				css('margin-top','90px');
@@ -241,8 +250,8 @@ $(document).ready(function () {
 
 		} else {
 			$('.nav').removeClass('fixed').next()
-                .css('margin-top','0');
-                
+				.css('margin-top','0');
+
 			$('.dirt-tag').css({
 				'top' : '300px'
 			});
@@ -250,6 +259,7 @@ $(document).ready(function () {
 		}
 	});
 
+	// loading gif
 	$("#loading").ajaxStart(function(){
 		$(this).show();
 	}).ajaxStop(function(){
@@ -302,7 +312,7 @@ $(document).ready(function () {
 				if(contentLocation=="#all"){
 					$("li.all-toggle").show();
 				} else {
-					$("li.all-toggle").hide();
+					// $("li.all-toggle").hide();
 				}
 				
 				e.preventDefault();
