@@ -1,5 +1,5 @@
-var pathname = window.location.pathname;
-// console.log(pathname);
+var hashname = window.location.hash;
+console.log(hashname);
 
 $(document).ready(function () {
 
@@ -18,6 +18,10 @@ $(document).ready(function () {
 	var $HoverArea = $("#projectHoverArea");
 	var rotateImageID = null;
 
+	function goToTop() {
+		var offset = $Nav.offset().top;
+		$('body, html').stop().animate({ scrollTop: "487px"}, 600, 'easeOutQuart');
+	}
 
 	function hideNavContent() {
 		$NavContent.slideUp();
@@ -32,10 +36,14 @@ $(document).ready(function () {
 
 	function closeContentShowNav() {
 
-		// $('body, html').stop().animate({ scrollTop: 0 }, function(){
-			// console.log("hiding content");
-			$Content.fadeOut('fast', function(){
-				// console.log("showing navcontent");
+		// var offset = $Nav.scrollTop();
+		var offset = $Nav.offset().top;
+
+		if(window.pageYOffset > 487){
+			$('body, html').stop().animate({ scrollTop: "487px"}, 600, 'easeOutQuart');
+		}
+		// , function(){
+			$Content.fadeOut('slow', function(){
 				showNavContent();
 			});
 		// });
@@ -67,6 +75,61 @@ $(document).ready(function () {
 	// start rotating
 	rotateImageID = setInterval(rotateImage, 10000);
 
+	// deeplinking
+	if (hashname !== '') {
+
+		var split = hashname.split('#');
+		var contentLocation = "";
+
+		// different #s need different paths
+		switch(split[1]) {
+			case 'schtick' :
+				contentLocation = "studio/"+split[1]+".html";
+				break;
+			case 'peeps' :
+				contentLocation = "studio/"+split[1]+".html";
+				break;
+			case 'collaborators':
+				contentLocation = "studio/"+split[1]+".html";
+				break;
+			case 'contact':
+				contentLocation = "studio/"+split[1]+".html";
+				break;
+			case 'publications':
+				contentLocation = "press/"+split[1]+".html";
+				break;
+			case 'kudos':
+				contentLocation = "press/"+split[1]+".html";
+				break;
+			case 'gigs':
+				contentLocation = "press/"+split[1]+".html";
+				break;
+			default:
+				contentLocation = "content/"+split[1]+"/"+split[1]+".html";
+		}
+
+		// var contentLocation = "content/"+split[1]+"/"+split[1]+".html";
+		// console.log('consolelocation'+contentLocation);
+		$LoadArea.load(contentLocation, function(){
+			
+			//hide hover
+			$HoverArea.css('display','none');
+			
+			//show back to work link
+			$('a.back-to-work').show();
+
+			$NavContent.slideUp(300, function(){
+				$Content.slideDown('slow', function(){
+					$('body, html').stop().animate({ scrollTop: "487px"}, 1000, 'easeOutQuart');
+					// $('body, html').stop().animate({
+					// scrollTop: $Nav.offset().top
+					// });
+				});
+			});
+			//$Content.fadeIn('slow', hideNavContent());
+		});
+	}
+
 	$WorkLink.click(function(){
 		closeContentShowNav();
 	});
@@ -82,6 +145,10 @@ $(document).ready(function () {
 	$('a.back-to-work').click(function(c){
 		c.preventDefault();
 		closeContentShowNav();
+	});
+
+	$('.dirt-tag').click(function(c){
+		goToTop();
 	});
 
 	// when a project link is clicked
@@ -108,9 +175,6 @@ $(document).ready(function () {
 			
 			//show back to work link
 			$('a.back-to-work').show();
-
-			// $NavContent.fadeOut('slow', function(){
-			//	$Content.fadeIn('slow', function(){
 
 			$NavContent.slideUp(300, function(){
 				$Content.slideDown('slow', function(){
@@ -184,6 +248,12 @@ $(document).ready(function () {
 			});
 
 		}
+	});
+
+	$("#loading").ajaxStart(function(){
+		$(this).show();
+	}).ajaxStop(function(){
+		$(this).hide();
 	});
 
 	/* Tabs Activiation

@@ -5,7 +5,7 @@ body {
 	color: #959595;
 	font-weight: normal;
 	/*overflow: scroll;*/
-	min-height: 1000px;
+	min-height: 2000px;
 }
 
 a:link, a:visited {
@@ -83,7 +83,7 @@ footer {
 .nav li a.active {
 	color:#fff;
 	background-color: #f26522;
-	padding: 5px;
+	padding: 5px 5px 3px 5px;
 
 }
 
