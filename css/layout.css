@@ -17,6 +17,36 @@ a:hover {
 	text-decoration: underline;
 }
 
+table {
+	/*border: 1px solid #f00;*/
+/*	border-collapse: separate;
+	border-spacing: 5px;
+*/}
+
+table .project-link {
+	color: #f26522;
+}
+
+.project {
+	color: #f26522;
+}
+
+tr {
+	border-bottom: 1px solid #eaeaea;
+}
+
+td {
+	/*border: 1px solid #0f0;*/
+	padding: 5px;
+}
+
+th {
+	font-weight: bold;
+	text-align: left;
+	color: #000;
+	padding-bottom: 10px;
+}
+
 h1 {
 	font-family: "letter-gothic-std", "Courier", serif;
 	font-size: 1.4em;
