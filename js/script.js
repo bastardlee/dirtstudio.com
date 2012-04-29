@@ -4,11 +4,9 @@ $(document).ready(function () {
 	var $Content = $(".content");
 	var $LoadArea = $(".load-area");
 	var $ProjectLinks = $("a.project-link");
+	var $WorkStudioPressLinks = $("a.work-studio-press");
 	var $PressLinks = $("a.press-link");
-	var $PressLink = $("a.press");
 	var $NewsLink = $("a.news");
-	var $WorkLink = $("a.work");
-	var $StudioLink = $("a.studio");
 	var $StudioLinks = $("a.studio-link");
 	var $Nav = $("ul.nav");
 	var $NavContent = $("ul.tabs-content");
@@ -40,11 +38,10 @@ $(document).ready(function () {
 		if(window.pageYOffset > 487){
 			$('body, html').stop().animate({ scrollTop: "487px"}, 600, 'easeOutQuart');
 		}
-		// , function(){
-			$Content.fadeOut('slow', function(){
-				showNavContent();
-			});
-		// });
+
+		$Content.fadeOut('slow', function(){
+			showNavContent();
+		});
 
 		// if it's stopped, start it again
 		if (!rotateImageID) {
@@ -81,7 +78,7 @@ $(document).ready(function () {
 		var split = hashname.split('#');
 		var contentLocation = "";
 
-		// different #s need different paths
+		// different #s need different content paths
 		switch(split[1]) {
 			case 'schtick' :
 				contentLocation = "studio/"+split[1]+".html";
@@ -125,18 +122,17 @@ $(document).ready(function () {
 				});
 			});
 		});
-	} // deeplinking
+	} // end deeplinking
 
-	$WorkLink.click(function(){
+	$WorkStudioPressLinks.click(function(){
 		closeContentShowNav();
 	});
 
-	$StudioLink.click(function(){
-		closeContentShowNav();
-	});
-
-	$PressLink.click(function(){
-		closeContentShowNav();
+	$NewsLink.click(function(){
+		hideNavContent();
+		$LoadArea.load("news/news.html", function(){
+			$Content.fadeIn('slow', function(){});
+		});
 	});
 
 	$('a.back-to-work').click(function(c){
@@ -151,8 +147,6 @@ $(document).ready(function () {
 	// when a project link is clicked
 	$ProjectLinks.click(function(c){
 		
-		// c.preventDefault();
-
 		// stop the rotate
 		clearInterval(rotateImageID);
 		rotateImageID = false;
@@ -181,14 +175,6 @@ $(document).ready(function () {
 		});
 
 	});
-
-	$NewsLink.click(function(){
-		hideNavContent();
-		$LoadArea.load("news/news.html", function(){
-			$Content.fadeIn('slow', function(){});
-		});
-	});
-
 
 	$PressLinks.click(function(){
 
@@ -247,24 +233,6 @@ $(document).ready(function () {
 				'top' : '0'
 			});
 
-			// if it hasn't moved yet, move it
-			// if(logoDown === null) {
-			//	$('.dirt-tag').css({
-			//		'top' : '-20px'
-			//	});
-
-			//	$('.dirt-tag').stop().animate({'top' : '+=20px'}, 'easeOutQuart');
-				
-			//	logoDown = 1;
-
-			// } else {
-			//	$('.dirt-tag').css({
-			//		'top' : '0'
-			//	});
-			// }
-
-
-
 		} else {
 			$('.nav').removeClass('fixed').next()
 				.css('margin-top','0');
@@ -272,10 +240,6 @@ $(document).ready(function () {
 			$('.dirt-tag').css({
 				'top' : '300px'
 			});
-
-			// $('.dirt-tag').stop().animate({'top' : '300'}, 'easeOutQuart');
-
-			// logoDown = null;
 
 		}
 	});
@@ -286,9 +250,6 @@ $(document).ready(function () {
 	}).ajaxStop(function(){
 		$(this).hide();
 	});
-
-	/* Tabs Activiation
-	================================================== */
 
 	var tabs = $('ul.tabs');
 
@@ -349,20 +310,8 @@ $(document).ready(function () {
 				$(this).addClass('active');
 
 				$(contentLocation).siblings().slideUp('fast', function(){
-					// setTimeout(function(){
-					// $(contentLocation).show();
 
-					// $(function() {
 					$(contentLocation).hide().slideDown('fast');
-					// });
-
-					// $(contentLocation).fadeIn();
-					// $(contentLocation).css({opacity: 0.0}).animate({opacity: 1.0}, 5000);
-
-					// }, 200);
-					//removeClass('active');
-				//}).addClass('active');
-				// $("#" + post.Id).css({opacity: 0.0}).html(PostHtml(post)).animate({opacity: 1.0}, 5000);
 
 				});
 			}
@@ -388,11 +337,11 @@ $(document).ready(function () {
 
 				//show the menu directly over the placeholder
 				$("div.project-hover").css({
+
 					position: "absolute",
 					top: pos.top + 11 + "px",
 					left: pos.left - 10 + "px"
-					// left: (pos.left + width) + "px"
-					// left: (pos.left + width) + "px"
+
 				}).show();
 
 				var contentLocation = $(this).attr('href');
@@ -405,21 +354,17 @@ $(document).ready(function () {
 					
 					$("div.project-hover").load(thumbLocation, function(){});
 
-					// $(contentLocation).show().addClass('active').siblings().hide().removeClass('active');
 				}
 			},
 			function(){
 				$(this).removeClass('active');
-				// $("div.project-hover").css('display', 'none');
+
 				$("div.project-hover").hide();
-				// $(contentLocation).hide().removeClass('active').siblings().hide().removeClass('active');
 			}
 
 		);
 
 	});
-
-
 	
 });
 
