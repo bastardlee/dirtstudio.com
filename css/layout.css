@@ -364,3 +364,32 @@ h2.place-date {
 h2.section {
 	margin-top: 40px;
 }
+
+.thumb-container {
+	margin-top:1px;
+}
+
+.thumb-container p {
+	margin-top: 10px;
+}
+
+.thumb-container img {
+	margin-bottom: 10px;
+}
+
+.thumb-title {
+	font-family: "letter-gothic-std", "Courier", serif;
+	color: #f26522;
+	line-height: 1em;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.thumb-place {
+	font-family: "letter-gothic-std", "Courier", serif;
+	color: #000;
+	line-height: 1em;
+	font-size: 10px;
+	font-weight: bold;
+}
+
