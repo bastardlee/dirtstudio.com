@@ -50,15 +50,16 @@ th {
 h1 {
 	font-family: "letter-gothic-std", "Courier", serif;
 	font-size: 1.4em;
-	margin: 0 0 30px 0;
+	margin: 0 0 5px 0;
 	color: #f26522;
 }
 
 h2 {
 	font-family: "letter-gothic-std", "Courier", serif;
-	color: #f26522;
-	font-size: 1.2em;
-	margin-bottom: 2em;
+	color: #000000;
+	font-size: 1em;
+	line-height: 1.6em;
+	margin-bottom: .5em;
 }
 
 h3 {
@@ -68,7 +69,7 @@ h3 {
 }
 
 h4 {
-	font-family: "letter-gothic-std", "Courier", serif;
+	/*font-family: "letter-gothic-std", "Courier", serif;*/
 	color: #000;
 }
 
@@ -100,7 +101,9 @@ strong {
 p {
 	font-weight: normal;
 	/*margin-top: 10px;*/
-	margin-bottom: 30px;
+	margin-bottom: 20px;
+	line-height: 1.5em;
+	font-size: 12px;
 }
 
 header {
@@ -149,6 +152,7 @@ footer {
 }
 
 .back-to-work {
+	font-family: "letter-gothic-std", "Courier", serif;
 	display: none;
 	position: relative;
 	right: -760px;
@@ -159,7 +163,12 @@ footer {
 }
 
 a.back-to-work:link, a.back-to-work:visited {
-	color: #959595;
+	color: #666;
+}
+
+a.back-to-work:hover {
+	text-decoration: none;
+	color: #000000;
 }
 
 .project-hover {
@@ -185,11 +194,6 @@ a.back-to-work:link, a.back-to-work:visited {
 	background: url('../img/orange_line.png') no-repeat;	
 }
 
-.caption {
-	padding: 10px;
-	font-size: .75em;
-	background-color: #ebebeb;
-}
 
 /* #Tabs (activate in tabs.js)
 ================================================== */
@@ -226,7 +230,7 @@ ul li a {
 ul li a:hover, ul a.active {
 	color: #000;
 	text-decoration: none;
-	font-weight: bold;
+	font-weight: normal;
 }
 
 
@@ -289,3 +293,74 @@ ul.tabs {
 
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 	@media only screen and (max-width: 479px) {}
+
+
+/* project detail styles
+================================================== */
+
+.caption {
+	padding: 10px;
+	background-color: #ebebeb;
+	width: 780px;
+}
+
+.caption p {
+	color: #757575;
+	margin-bottom: 10px;
+}
+
+.caption p:last-child {
+	margin-bottom: 0px;
+}
+
+.caption-side {
+	padding: 10px;
+	background-color: #ebebeb;
+	width: 260px;
+	float: left;
+	margin: 100px 0px 20px 0px;
+}
+
+.caption-side p {
+	color: #757575;
+	margin-bottom: 10px;
+}
+
+.caption-side p:last-child {
+	margin-bottom: 0px;
+}
+
+.project-image {
+	margin: 100px 0px 20px 0px;
+}
+
+.project-image-left {
+	float: left;
+	margin: 100px 20px 20px 0px;
+}
+
+.project-image-right {
+	margin: 100px 0px 20px 20px;
+}
+
+
+/* misc styles
+================================================== */
+
+
+ul.tabs-content li {
+	font-size:12px;
+	margin-bottom:3px;
+}
+
+ul.tabs-content a {
+	color: #959595;
+}
+
+h2.place-date {
+	margin-bottom: 40px;
+}
+
+h2.section {
+	margin-top: 40px;
+}
