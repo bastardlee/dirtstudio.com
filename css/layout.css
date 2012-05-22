@@ -8,6 +8,31 @@ body {
 	min-height: 2000px;
 }
 
+.tabsThree {
+	margin-left: 34px;
+}
+
+.sixty {
+	margin-right: 60px;
+	/*background-color: #eaeaea;*/
+}
+
+.plus-more {
+	margin-left: 10px;
+}
+
+.add-one-sixteen {
+	margin-left: 116px;
+}
+
+.add-one-thirty {
+	margin-left: 130px;
+}
+
+.add-two-fifty-two {
+	margin-left: 252px;
+}
+
 a:link, a:visited {
 	color: #666;
 	text-decoration: none;
@@ -16,12 +41,6 @@ a:link, a:visited {
 a:hover {
 	text-decoration: underline;
 }
-
-table {
-	/*border: 1px solid #f00;*/
-/*	border-collapse: separate;
-	border-spacing: 5px;
-*/}
 
 table .project-link {
 	color: #f26522;
@@ -186,7 +205,7 @@ a.back-to-work:hover {
 
 .black-line {
 	position: relative;
-	left: -295px;
+	left: -230px;
 	top: -13px;
 }
 
@@ -194,12 +213,25 @@ a.back-to-work:hover {
 	background: url('../img/orange_line.png') no-repeat;	
 }
 
+#work, #studio, #press {
+	position: relative;
+}
+
+ul#categories li a.active:before, ul#studio-categories li a.active:before, #press ul li a.active:before {
+	content: url('../img/hand.png');
+	position: absolute;
+	left: -60px; 
+}
+
+#projectHoverArea {
+	position: relative;
+}
 
 /* #Tabs (activate in tabs.js)
 ================================================== */
 
 ul.tabs {
-	text-align: center;
+	/*text-align: center;*/
 	margin-top: 20px;
 	display: block;
 	margin: 0 0 20px 0;

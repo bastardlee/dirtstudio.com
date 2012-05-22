@@ -14,6 +14,7 @@ $(document).ready(function () {
 	var $HoverArea = $("#projectHoverArea");
 	var rotateImageID = null;
 	var logoDown = null;
+	var rotateTime = 8000;
 
 	function goToTop() {
 		var offset = $Nav.offset().top;
@@ -45,7 +46,7 @@ $(document).ready(function () {
 
 		// if it's stopped, start it again
 		if (!rotateImageID) {
-			rotateImageID = setInterval(rotateImage, 10000);
+			rotateImageID = setInterval(rotateImage, rotateTime);
 		}
 	}
 
@@ -68,7 +69,7 @@ $(document).ready(function () {
 	}
 
 	// start rotating
-	rotateImageID = setInterval(rotateImage, 10000);
+	rotateImageID = setInterval(rotateImage, rotateTime);
 
 	// deeplinking
 	if (hashname !== '') {
@@ -340,7 +341,8 @@ $(document).ready(function () {
 
 					position: "absolute",
 					top: pos.top + 11 + "px",
-					left: pos.left - 10 + "px"
+					// left: pos.left - 10 + "px"
+					left:  "-215px"
 
 				}).show();
 
