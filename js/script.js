@@ -14,7 +14,7 @@ $(document).ready(function () {
 	var $HoverArea = $("#projectHoverArea");
 	var rotateImageID = null;
 	var logoDown = null;
-	var rotateTime = 8000;
+	var rotateTime = 5280;
 
 	function goToTop() {
 		var offset = $Nav.offset().top;
