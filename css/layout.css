@@ -294,6 +294,7 @@ ul li a:hover, ul a.active {
 
 
 ul li a.active {
+	color: #000;
 	text-decoration: bold;
 		/*content: url(../img/hand.png);*/
 
