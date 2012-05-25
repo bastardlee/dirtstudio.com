@@ -208,12 +208,21 @@ $(document).ready(function () {
 
 
 	var firefoxPadding = 0;
+	var firefoxPadding2 = 0;
 	var nextMargin = "70px";
 
 	// weird box model fix for firefox
 	if ($.browser.mozilla === true) {
 		firefoxPadding = 20;
 		nextMargin = "90px";
+
+		firefoxPadding2 = 1;
+		$('#bg-line').css({
+				'position' : 'absolute',
+				'top' : '21px'
+		});
+
+
 	}
 
 	// get the top height of the header
@@ -233,12 +242,23 @@ $(document).ready(function () {
 				'top' : '0'
 			});
 
+			// extended line too
+			$('#bg-line').css({
+				'position' : 'fixed',
+				'top' : -466 + firefoxPadding2
+			});
+
 		} else {
 			$('.nav').removeClass('fixed').next()
 				.css('margin-top','0');
 
 			$('.dirt-tag').css({
 				'top' : '300px'
+			});
+
+			$('#bg-line').css({
+				'position' : 'absolute',
+				'top' : 0 + firefoxPadding + firefoxPadding2
 			});
 
 		}

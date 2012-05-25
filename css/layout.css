@@ -8,6 +8,15 @@ body {
 	min-height: 2000px;
 }
 
+#bg-line {
+	position: absolute;
+	top: 0px;
+	height: 500px;
+	width:500px;
+	background-image: url('../img/black_line_bg.png');
+	overflow-x: hidden;
+}
+
 a:link, a:visited {
 	color: #666;
 	text-decoration: none;
