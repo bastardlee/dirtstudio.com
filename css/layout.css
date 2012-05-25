@@ -31,6 +31,14 @@ body {
 
 .add-two-fifty-two {
 	margin-left: 252px;
+
+#bg-line {
+	position: absolute;
+	top: 0;
+	height: 500px;
+	width:500px;
+	background-image: url('../img/black_line_bg.png');
+	overflow-x: hidden;
 }
 
 a:link, a:visited {
