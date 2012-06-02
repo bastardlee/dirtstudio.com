@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 	function goToTop() {
 		var offset = $Nav.offset().top;
-		$('body, html').stop().animate({ scrollTop: "487px"}, 400, 'easeOutQuart');
+		$('body, html').stop().animate({ scrollTop: "0"}, 400, 'easeOutQuart');
 	}
 
 	function hideNavContent() {
@@ -41,6 +41,7 @@ $(document).ready(function () {
 		}
 
 		$Content.fadeOut('slow', function(){
+		// $Content.hide(function(){
 			showNavContent();
 		});
 
@@ -119,7 +120,7 @@ $(document).ready(function () {
 			
 			$NavContent.slideUp(300, function(){
 				$Content.slideDown('slow', function(){
-					$('body, html').stop().animate({ scrollTop: "487px"}, 1000, 'easeOutQuart');
+					// $('body, html').stop().animate({ scrollTop: "487px"}, 1000, 'easeOutQuart');
 				});
 			});
 		});
