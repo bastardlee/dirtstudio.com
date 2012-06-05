@@ -15,6 +15,7 @@ $(document).ready(function () {
 	var rotateImageID = null;
 	var logoDown = null;
 	var rotateTime = 5280;
+	var stucktotop = null;
 
 	function goToTop() {
 		var offset = $Nav.offset().top;
@@ -144,6 +145,10 @@ $(document).ready(function () {
 
 	$('.dirt-tag').click(function(c){
 		goToTop();
+		$('ul.tabs').find('> li > a').removeClass('active');
+		// tabs.removeClass('active');
+		hideNavContent();
+
 	});
 
 	// when a project link is clicked
@@ -208,7 +213,6 @@ $(document).ready(function () {
 
 	});
 
-
 	var firefoxPadding = 0;
 	var firefoxPadding2 = 0;
 	var nextMargin = "70px";
@@ -223,8 +227,6 @@ $(document).ready(function () {
 				'position' : 'absolute',
 				'top' : '21px'
 		});
-
-
 	}
 
 	// get the top height of the header
@@ -249,6 +251,8 @@ $(document).ready(function () {
 				'position' : 'fixed',
 				'top' : -466 + firefoxPadding2
 			});
+			// set stuckToTop to 1
+			stuckToTop = 1;
 
 		} else {
 			$('.nav').removeClass('fixed').next()
@@ -262,6 +266,9 @@ $(document).ready(function () {
 				'position' : 'absolute',
 				'top' : 0 + firefoxPadding + firefoxPadding2
 			});
+
+			// set stucktotop = 0;
+			stuckToTop = null;
 
 		}
 	});
@@ -280,6 +287,10 @@ $(document).ready(function () {
 		//Get all tabs
 		var tab = $(this).find('> li > a');
 		tab.click(function(e) {
+
+			if (stuckToTop !== null) {
+				goToTop();
+			}
 
 			// remove active class. need better solution
 			$('ul#studio-categories').find('a').removeClass('active');
@@ -318,6 +329,7 @@ $(document).ready(function () {
 			if (contentLocation.charAt(0)=="#") {
 
 				if(contentLocation=="#all"){
+					e.preventDefault();
 					$("li.all-toggle").show();
 				} else if (contentLocation=="#bydate" || contentLocation=="#a-z") {
 					// do nothing
