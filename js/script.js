@@ -148,6 +148,7 @@ $(document).ready(function () {
 		$('ul.tabs').find('> li > a').removeClass('active');
 		// tabs.removeClass('active');
 		hideNavContent();
+		$Content.hide();
 
 	});
 
