@@ -52,7 +52,7 @@ $(document).ready(function () {
 		}
 	}
 
-	var images = new Array ('img/header_ford.jpg', 'img/header_hardberger.jpg', 'img/header_bny.jpg', 'img/header_highline.jpg', 'img/header_northshore.jpg', 'img/header_turtlecreek.jpg', 'img/header_urbndd.jpg', 'img/header_urbanhq.jpg' );
+	var images = new Array ('img/header_ford.jpg', 'img/header_hardberger.jpg', 'img/header_bny.jpg', 'img/header_highline.jpg', 'img/header_northshore.jpg', 'img/header_turtlecreek.jpg', 'img/header_urbndd.jpg', 'img/header_urbnhq.jpg' );
 	var index = 1;
 
 	function rotateImage(){
