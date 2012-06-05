@@ -15,7 +15,7 @@ $(document).ready(function () {
 	var rotateImageID = null;
 	var logoDown = null;
 	var rotateTime = 5280;
-	var stucktotop = null;
+	var stuckToTop = null;
 
 	function goToTop() {
 		var offset = $Nav.offset().top;
